@@ -4,9 +4,11 @@ import MovieCard from "./MovieCard";
 
 const Movie = props => {
   const [movie, setMovie] = useState({});
-
+  console.log("clicked");
   useEffect(() => {
-    const id = 1;
+    let url = window.location.toString();
+    const id = url.charAt(url.length - 1);
+
     // change ^^^ that line and grab the id from the URL
     // You will NEED to add a dependency array to this effect hook
 
@@ -30,7 +32,7 @@ const Movie = props => {
     return <div>Loading movie information...</div>;
   }
 
-  const { title, director, metascore, stars } = movie;
+  const { id, title, director, metascore, stars } = movie;
   return (
     <>
       <div>
